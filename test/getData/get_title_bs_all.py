@@ -55,35 +55,49 @@ def get_inq(content):
     inq = inqtag.text
     return inq
 
-
-
-if __name__ == '__main__':
+def get_data():
     datalist = []
     content = get_content()
-    # comment = get_comment(content[0])
-    # print(comment)
-    # print(content[0])
-    # link = get_link(content[0])
-    # print(link)
     for movie in content:
         link = get_link(movie)
-        img  = get_img(movie)
+        img = get_img(movie)
         name = get_name(movie)
         common = get_common(movie)
         rating = get_rating(movie)
         comment = get_comment(movie)
         inq = get_inq(movie)
-        data = [name,link,img,common,rating,comment,inq]
+        data = [name, link, img, common, rating, comment, inq]
         datalist.append(data)
-    # print(len(datalist))
+    return datalist
 
-    # print(len(datalist[1][3]))
-    # print(datalist[1][3])
-    for i,item in enumerate(datalist[0:4]):
-        print('-'*20 +'No. {0}'.format(i) +'-'*20)
-        for j,_ in enumerate(item):
-            print('index {0}: {1}'.format(j,_))
 
+
+# if __name__ == '__main__':
+#     datalist = []
+#     content = get_content()
+#     # comment = get_comment(content[0])
+#     # print(comment)
+#     # print(content[0])
+#     # link = get_link(content[0])
+#     # print(link)
+#     for movie in content:
+#         link = get_link(movie)
+#         img  = get_img(movie)
+#         name = get_name(movie)
+#         common = get_common(movie)
+#         rating = get_rating(movie)
+#         comment = get_comment(movie)
+#         inq = get_inq(movie)
+#         data = [name,link,img,common,rating,comment,inq]
+#         datalist.append(data)
+#     # print(len(datalist))
+#
+#     # print(len(datalist[1][3]))
+#     # print(datalist[1][3])
+#     # for i,item in enumerate(datalist[0:4]):
+#     #     print('-'*20 +'No. {0}'.format(i) +'-'*20)
+#     #     for j,_ in enumerate(item):
+#     #         print('index {0}: {1}'.format(j,_))
 
 
 
